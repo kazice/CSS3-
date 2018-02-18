@@ -1,0 +1,309 @@
+@font-face{
+    font-family:"raphaelicons";
+    src:url('../fonts/raphaelicons-webfont.eot') format('eot'),
+        url('../fonts/raphaelicons-webfont.svg') format('svg'),
+        url('../fonts/raphaelicons-webfont.ttf') format('truetype'),
+        url('../fonts/raphaelicons-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    height:100%;
+}
+body{
+    padding:0;
+    margin:0;
+    font-size: 18px;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow:1px 1px 2px rgba(151,24,64,0.2);
+}
+input{
+    opacity: 0;
+    z-index:20;
+    cursor: pointer;
+}
+a{
+    text-decoration:none;
+    color:white;
+    text-shadow:1px 1px 2px rgba(151,24,64,0.2);
+    z-index:10;
+}
+.lradius{
+    border-radius:10px 0 0 10px;
+}
+.rradius{
+    border-radius:0 10px 10px 0;
+}
+input,a{
+    font-weight:700;
+    width:20%;
+    height:80px;
+    background: #e23a6e;
+    position:fixed;
+    bottom:0px;
+    text-align:center;
+    line-height: 80px;
+}
+input:checked + a,
+input:checked:hover + a{
+    background: #821134;
+}
+/* 画三角形 */
+input:checked + a::after{
+    /* 重点，老容易忘，用::before和::after伪类一定要把内容置空 */
+    content:"";
+    width:0;
+    height:0;
+    border:30px solid transparent;
+    border-bottom-color:#821134;
+    position:absolute;
+    bottom:80px;
+    left:50%;
+    margin-left:-30px;
+}
+input:hover + a{
+    -webkit-transition:1s;
+    -moz-transition:1s;
+    transition:1s ease-in-out;
+    -webkit-transition:1s ease-in-out;
+    -moz-transition:1s ease-in-out;
+    background:#ad244f;
+}
+#nav-1,#nav-1 + a{
+    left:0%;
+}
+#nav-2,#nav-2 + a{
+    left:20%;
+}
+#nav-3,#nav-3 + a{
+    left:40%;
+}
+#nav-4,#nav-4 + a{
+    left:60%;
+}
+#nav-5,#nav-5 + a{
+    left:80%;
+}
+.main,.main-son{
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+.main #main-1{
+    left:0%;
+}
+.main #main-2{
+    left:100%;
+}
+.main #main-3{
+    left:200%;
+}
+.main #main-4{
+    left:300%;
+}
+.main #main-5{
+    left:400%;
+}
+.main{
+    left:0;
+    top:0;
+    transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+#nav-1:checked ~ .main{
+    transform:translateX(0%);
+    -webkit-transform:translateX(0%);
+    -moz-transform:translateX(0%);
+}
+#nav-2:checked ~ .main{
+    transform:translateX(-100%);
+    -webkit-transform:translateX(-100%);
+    -moz-transform:translateX(-100%);
+}
+#nav-3:checked ~ .main{
+    transform:translateX(-200%);
+    -webkit-transform:translateX(-200%);
+    -moz-transform:translateX(-200%);
+}
+#nav-4:checked ~ .main{
+    transform:translateX(-300%);
+    -webkit-transform:translateX(-300%);
+    -moz-transform:translateX(-300%);
+}
+#nav-5:checked ~ .main{
+    transform:translateX(-400%);
+    -webkit-transform:translateX(-400%);
+    -moz-transform:translateX(-400%);
+}
+div.desc{
+    width:200px;
+    height:200px;
+    background: #fa96b5;
+    position:absolute;
+    left:50%;
+    margin-left:-100px;
+    top:-100px;
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+}
+[data-icon]:after{
+    font-family: "raphaelicons";
+    content:attr(data-icon);
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-100px 0 0 -100px;
+    background:transparent;
+    font-size:90px;
+    text-align: center;
+    line-height: 200px;
+    color:#fff;
+    transform:rotate(-45deg) translateY(25%);
+}
+.main-son h2{
+    text-shadow:1px 1px 2px rgba(151,24,64,0.2);
+    font-size:90px;
+    text-align: center;
+    font-weight:700;
+    line-height:50px;
+    color:#e23a6e;
+    position:absolute;
+    width:50%;
+    left:25%;
+    top:50%;
+    margin-top:-180px;
+}
+.main-son p{
+    text-shadow:1px 1px 2px rgba(151,24,64,0.2);
+    font-size:30px;
+    text-align: center;
+    font-weight:normal;
+    line-height:50px;
+    color:#656;
+    position:absolute;
+    width:50%;
+    left:25%;
+    top:50%;
+    margin-top:-50px;
+    word-wrap:break-word;
+}
+#nav-1:checked ~ .main #main-1 h2,
+#nav-2:checked ~ .main #main-2 h2,
+#nav-3:checked ~ .main #main-3 h2,
+#nav-4:checked ~ .main #main-4 h2,
+#nav-5:checked ~ .main #main-5 h2{
+    animation: l2r 0.6s ease-in-out 0.2s;
+}
+#nav-1:checked ~ .main #main-1 p,
+#nav-2:checked ~ .main #main-2 p,
+#nav-3:checked ~ .main #main-3 p,
+#nav-4:checked ~ .main #main-4 p,
+#nav-5:checked ~ .main #main-5 p{
+    animation: r2l 0.6s ease-in-out 0.2s;
+}
+
+@-webkit-keyframes l2r{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+@-moz-keyframes l2r{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+@keyframes l2r{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+@-webkit-keyframes r2l{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+@-moz-keyframes r2l{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+@keyframes r2l{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+.even h2,.even p{
+    color:#fff;
+    opacity: 0.8;
+}
+.even{
+    background: #fa96b5;
+}
+.even div{
+    background:#fff;
+}
+.even [data-icon]:after{
+    color:#fa96b5;
+}
+
+@media screen and (max-width:520px) and (min-width:320px){
+    .main-son h2{
+        font-size:70px;
+    }
+    .main-son p{
+        word-wrap:break-word;
+        font-size:20px;
+    }
+    a{
+        font-size:13px;
+    }
+}
