@@ -1,9 +1,9 @@
 @font-face{
     font-family:"raphaelicons";
-    src:url('../fonts/raphaelicons-webfont.eot') format('eot'),
-        url('../fonts/raphaelicons-webfont.svg') format('svg'),
-        url('../fonts/raphaelicons-webfont.ttf') format('truetype'),
-        url('../fonts/raphaelicons-webfont.woff') format('woff');
+    src:url('fonts/raphaelicons-webfont.eot') format('eot'),
+        url('fonts/raphaelicons-webfont.svg') format('svg'),
+        url('fonts/raphaelicons-webfont.ttf') format('truetype'),
+        url('fonts/raphaelicons-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
